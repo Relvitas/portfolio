@@ -3,6 +3,11 @@
     src: url(../fonts/peach.otf);
 }
 
+@font-face {
+    font-family: wash;
+    src: url(../fonts/wash.otf);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -25,10 +30,40 @@
     list-style: none;
 }
 
+.box-1 {
+    min-height: 100vh;
+    margin: 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-presentation {
+    font-family: wash;
+}
+
+.presentation > img {
+    position: relative;
+    width: 180px;
+    clip-path: circle(50%);
+}
+
+.text-presentation > span {
+    position: relative;
+    font-size: 6rem;
+}
+
 .item > a {
     font-family: peach;
     color: white;
     text-decoration: none;
+}
+
+.presentation > image,
+.text-presentation > span:nth-of-type(1),
+.text-presentation > span:nth-of-type(2),
+.text-presentation > span:nth-of-type(3) {
+    z-index: -1;
 }
 
 .item:nth-child(1) > a {
@@ -48,6 +83,56 @@
 @media (hover: hover) {
     .item > a:hover {
         animation: pointer-item-nav 0.5s ease forwards;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .presentation {
+        width: 400px;
+    }
+    
+    .presentation > img {
+        bottom: 120px;
+        left: 20px;
+    }
+    
+    .text-presentation > span:nth-of-type(2) {
+        top: 150px;
+        left: 20px;
+    }
+    
+    .text-presentation > span:nth-of-type(3) {
+        top: 170px;
+        left: 80px;
+    }
+    
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+
+    .presentation {
+        height: 460px;
+    }
+
+    .presentation > img {
+        bottom: 232px;
+        left: 20%;
+    }
+    
+    .text-presentation > span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .text-presentation > span:nth-of-type(2) {
+        top: 160px;
+    }
+    
+    .text-presentation > span:nth-of-type(3) {
+        top: 130px;
     }
 }
 
